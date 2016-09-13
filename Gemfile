@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'paperclip'
 gem 'masonry-rails'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise'
 gem 'rails_admin'
 # See https://github.com/rails/execjs#readme for more supported runtimes
