@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'paperclip'
+gem 'masonry-rails'
 gem 'devise'
 gem 'rails_admin'
 # See https://github.com/rails/execjs#readme for more supported runtimes
