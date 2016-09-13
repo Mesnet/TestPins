@@ -21,7 +21,7 @@ class PinsController < ApplicationController
       render 'new'
     end
   end 
-
+ 
   def edit 
 
   end 
