@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   end
 
   def owned_profile  
-    @user = User.find_by(user_name: params[:user_name])
+    @user = User.find_by(pseudo: params[:pseudo])
     unless current_user == @user
       flash[:alert] = "That profile doesn't belong to you!"
       redirect_to root_path
