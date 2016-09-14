@@ -1,0 +1,37 @@
+<div class="posts-wrapper">
+  <div class="row profile-header">
+    <div class="col-md-6">
+      <div class="img-circle">
+        <%= profile_avatar_select(@user) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="user-name-and-follow">
+        <h3 class="profile-user-name">
+          <%= @user.pseudo %>
+        </h3>
+        <span>
+          <% if @user == current_user %>
+            <%= link_to 'Edit Profile', edit_profile_path(@user.pseudo), class: 'btn edit-button' %>
+            <% end %>
+        </span>
+      </div>
+      <p class="profile-bio">
+        <%= @user.city %>
+      </p>
+      <div class="user-statistics">
+        <p>
+          <%= pluralize @user.pins.count, 'Oeuvre' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="transitions-enabled" id="pins">
+  <%-@pins.each do |pin|%>
+  <%= render 'pins/form2', pin: pin%>
+<%end%>
+</div>
