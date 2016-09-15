@@ -16,8 +16,15 @@
         <div class="row">
           <div class="col-md-6">
             <p class="user">
-              Submitted by
-              <%= link_to @pin.user.pseudo, profile_path(@pin.user.pseudo)%>
+              Submitted by :
+              <div class="frame-user">
+                <div class="nav-pp">
+                  <%= link_to image_tag(@pin.user.avatar(:small)), profile_path(@pin.user.pseudo) %>
+                </div> 
+                <div class="nam-pp">
+                  <%= link_to @pin.user.pseudo, profile_path(@pin.user.pseudo)%>
+                </div>    
+              </div>
             </p>
           </div>
           <div class="col-md-6">
