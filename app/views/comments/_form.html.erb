@@ -1,9 +1,9 @@
 <%= form_for ([@pin, @pin.comments.build]) do |f| %>
   <p>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </p>
   <br>
   <p>
-    <%= f.submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </p>
 <%end%>
