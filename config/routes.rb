@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   patch ':pseudo/edit', to: 'profiles#update', as: :update_profile     
 
   resources :pins do 
+    resources :comments
     member do
       put "like", to: "pins#upvote"
     end 
