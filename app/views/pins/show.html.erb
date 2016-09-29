@@ -15,6 +15,18 @@
         </p>
       </div>
 
+      <div class="vote_button">
+        <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
+            <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center"></span>
+            <%= @pin.get_upvotes.size %>
+          <% end %>
+
+          <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
+            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+            <%= @pin.get_downvotes.size %>
+          <% end %>
+      </div>
+
       <div class="panel-footer">
         <div class="row">
           <div class="col-md-6">
@@ -30,7 +42,8 @@
               </div>
             </p>
           </div>
-
+         
+          </div>
           <% if @pin.user_id == current_user.id %>
         <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
         <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
@@ -38,7 +51,7 @@
         </div>
       </div>
 
-      </div>
+   
       <div id="comments">
             <h2><%= @pin.comments.count %> Comments</h2>
             <%= render @pin.comments %>
@@ -46,5 +59,6 @@
             <h3>Add a comment:</h3>
             <%= render "comments/form" %>
           </div>
+    </div>
     
 

@@ -4,9 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+acts_as_voter
 
   has_many :pins
   has_many :comments
+
 
   has_attached_file :avatar, styles: { medium: '152x152#', small: '50x50#' }  
 validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/  

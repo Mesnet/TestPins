@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :comments
     member do
       put "like", to: "pins#upvote"
+      put "unlike", to: "pins#downvote"
     end 
   end
 

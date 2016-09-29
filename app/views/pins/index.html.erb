@@ -5,7 +5,17 @@
         <%= link_to (image_tag pin.image.url), pin %>
       </div>
       <h2><%=link_to pin.title, pin%></h2>
-      
+      <div class="vote_button">
+        <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success" do %>
+            <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center"></span>
+            <%= pin.get_upvotes.size %>
+          <% end %>
+
+          <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger" do %>
+            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+            <%= pin.get_downvotes.size %>
+          <% end %>
+      </div>
     </div>
      
   <%end%>
