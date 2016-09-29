@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     
     if @comment.save 
       redirect_to pin_path(@pin)
-      flash[:success] = 'Merci, votre avis nous est essentiel !'
+      flash[:success] = 'Thanks for your comment !'
     else 
       redirect_to :back
     end 

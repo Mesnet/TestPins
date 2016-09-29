@@ -39,11 +39,6 @@ class PinsController < ApplicationController
     redirect_to root_path
   end 
 
-  def upvote
-    @pin.upvote_by current_user
-    redirect_to :back
-  end 
-
   private
 
 
