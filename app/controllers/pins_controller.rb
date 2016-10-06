@@ -9,8 +9,11 @@ class PinsController < ApplicationController
   def show 
   end 
 
+
+
   def new
-    @pin = current_user.pins.build
+   @pin = Pin.new
+   @users = User.all.artist
   end
 
   def create 
@@ -54,7 +57,7 @@ class PinsController < ApplicationController
 
 
   def pin_params
-    params.require(:pin).permit(:title, :description, :image)
+    params.require(:pin).permit(:title, :description, :image, :pin_maker)
   end 
 
   def find_pin
